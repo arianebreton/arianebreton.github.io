@@ -2,14 +2,14 @@
 body {
     max-width: 700px;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 15rem 1.5rem 3rem 1.5rem;
 
     font-family: Georgia, serif;
     font-size: 1.1rem;
     line-height: 1.7;
 
-    color: #222;
-    background-color: #fafafa;
+    color: #2e434f;
+    background-color: #f7f4d5;
 }
 
 /* Headings */
@@ -26,10 +26,61 @@ p {
 
 /* Links */
 a {
-    color: #0066cc;
+    color: #8da249;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #d2682b;
+}
+
+/* Home icon link */
+.home-icon {
+    position: fixed;
+
+    top: 3rem;
+
+    left: calc(50% - 350px - 20rem);
+
+    color: #8da249;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-icon:hover {
+    color: #d2682b;
+}
+
+/* Darm mode button */
+.theme-toggle {
+    position: fixed;
+    top: 3rem;
+
+    right: calc(50% - 350px - 20rem);
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: #8da249;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    color: #d2682b;
+}
+
+/* Dark mode style */
+body.dark-mode {
+    background-color: #591e2a;
+    color: #f7f4d5;
+}
+
+body.dark-mode a {
+    color: #c7d68a;
 }
