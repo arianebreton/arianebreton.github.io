@@ -37,50 +37,115 @@ a:hover {
 }
 
 /* Home icon link */
-.home-icon {
+.home-link {
     position: fixed;
-
     top: 3rem;
-
     left: calc(50% - 350px - 20rem);
 
     color: #8da249;
+    text-decoration: none;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    font-family: inherit;
+    font-size: 1.1rem;
 }
 
-.home-icon:hover {
+.home-link:hover {
     color: #d2682b;
+
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #d2682b;
 }
 
-/* Darm mode button */
-.theme-toggle {
+/* Dark mode button */
+.theme-switch {
     position: fixed;
     top: 3rem;
-
     right: calc(50% - 350px - 20rem);
-
-    background: none;
-    border: none;
-    padding: 0;
-
-    color: #8da249;
-    font-size: 2rem;
-    cursor: pointer;
+    width: 60px;
+    height: 32px;
 }
 
-.theme-toggle:hover {
-    color: #d2682b;
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    cursor: pointer;
+
+    background-color: #8da249;
+    border-radius: 999px;
+
+    transition: 0.3s;
+}
+
+/* moving circle */
+.slider::before {
+    content: "";
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    left: 4px;
+    bottom: 4px;
+
+    background-color: #f7f4d5;
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+/* destination icon */
+.slider::after {
+    content: "☾";
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 20px;
+    color: #f7f4d5;
+}
+
+/* dark mode */
+input:checked + .slider {
+    background-color: #f7f4d5;
+}
+
+input:checked + .slider::before {
+    transform: translateX(28px);
+}
+
+/*Need to mirror light mode toggle, currently the circle disapears*/
+
+/* show destination as light mode */
+input:checked + .slider::after {
+    content: "☀";
+    left: 10px;
+    right: auto;
 }
 
 /* Dark mode style */
 body.dark-mode {
-    background-color: #591e2a;
+    background-color: #2e434f;
     color: #f7f4d5;
 }
 
 body.dark-mode a {
+    color: #c7d68a;
+}
+
+body.dark-mode .home-link {
     color: #c7d68a;
 }
